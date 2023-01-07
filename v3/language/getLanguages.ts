@@ -1,3 +1,4 @@
+import { handleNon200Response } from "../../utils/handleNon200Response.ts";
 import { BASE_URL } from "../constants.ts";
 import { Language, LanguageMap } from "./types.ts";
 
@@ -9,7 +10,9 @@ type RawLanguage = {
 
 /**
  * Fetches the raw data, maps it into a more idiomatic shape, then returns it
- * as a map from `string` language codes to `Language` objects.
+ * as a map from `string` ISO language codes to `Language` objects.
+ *
+ * Docs: https://developers.themoviedb.org/3/configuration/get-languages
  *
  * @throws {TypeError} when fetch encounters a network error
  * @throws {Error} when fetch succeeded but a non-200 status code was received. The `Response` will be assigned to `Error.cause`, and the `Error`'s message will be either a specific status message returned by the API if present, or the `Response.statusText` otherwise.
@@ -18,17 +21,7 @@ export async function getLanguages(apiKey: string): Promise<LanguageMap> {
   const url = `${BASE_URL}/configuration/languages?api_key=${apiKey}`;
   const response = await fetch(url);
 
-  if (response.status !== 200) {
-    let message: string;
-    try {
-      const data = await response.json();
-      if (!data.status_message) throw new Error();
-      message = data.status_message;
-    } catch {
-      message = response.statusText;
-    }
-    throw new Error(message, { cause: response });
-  }
+  await handleNon200Response(response);
 
   const data = await response.json() as RawLanguage[];
 
