@@ -22,23 +22,22 @@ export async function getLanguages(apiKey: string): Promise<LanguageMap> {
     apiKey,
   );
 
-  const languages = data.map(({
-    iso_639_1: isoCode,
-    english_name: name,
-    name: nativeName,
-  }): Language => {
-    const lang: Language = { isoCode, name };
-    if (nativeName) {
-      lang.nativeName = nativeName;
-    }
-    return lang;
-  });
+  const languageMap: LanguageMap = {};
 
-  return languages.reduce(
-    (map, language) => {
-      map[language.isoCode] = language;
-      return map;
-    },
-    {} as LanguageMap,
-  );
+  for (const rawLanguage of data) {
+    const {
+      iso_639_1: isoCode,
+      english_name: name,
+      name: nativeName,
+    } = rawLanguage;
+
+    const language: Language = { isoCode, name };
+    if (nativeName) {
+      language.nativeName = nativeName;
+    }
+
+    languageMap[isoCode] = language;
+  }
+
+  return languageMap;
 }
