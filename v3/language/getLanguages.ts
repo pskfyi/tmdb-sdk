@@ -1,5 +1,4 @@
-import { handleNon200Response } from "../../utils/handleNon200Response.ts";
-import { BASE_URL } from "../constants.ts";
+import { fetchJSONv3 } from "../../utils/fetchJSONv3.ts";
 import { Language, LanguageMap } from "./types.ts";
 
 type RawLanguage = {
@@ -18,12 +17,10 @@ type RawLanguage = {
  * @throws {Error} when fetch succeeded but a non-200 status code was received. The `Response` will be assigned to `Error.cause`, and the `Error`'s message will be either a specific status message returned by the API if present, or the `Response.statusText` otherwise.
  */
 export async function getLanguages(apiKey: string): Promise<LanguageMap> {
-  const url = `${BASE_URL}/configuration/languages?api_key=${apiKey}`;
-  const response = await fetch(url);
-
-  await handleNon200Response(response);
-
-  const data = await response.json() as RawLanguage[];
+  const data: RawLanguage[] = await fetchJSONv3(
+    "/configuration/languages",
+    apiKey,
+  );
 
   const languages = data.map(({
     iso_639_1: isoCode,
