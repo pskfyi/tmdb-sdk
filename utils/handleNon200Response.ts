@@ -1,3 +1,4 @@
+/** @internal */
 export async function handleNon200Response(response: Response) {
   if (response.status !== 200) {
     let message: string;
