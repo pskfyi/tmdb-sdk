@@ -36,6 +36,21 @@ when a network issue is encountered.
 
 https://developers.themoviedb.org/3/getting-started/introduction
 
+### Countries
+
+Source:
+
+- https://developers.themoviedb.org/3/configuration/get-countries
+
+```ts
+import { COUNTRIES, getCountries } from "path/to/v3/countries/mod.ts";
+import type {
+  Country,
+  CountryCode,
+  CountryMap,
+} from "path/to/v3/countries/mod.ts";
+```
+
 ### Language
 
 Source:
