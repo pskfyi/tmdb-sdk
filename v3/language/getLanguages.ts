@@ -8,9 +8,6 @@ type RawLanguage = {
 };
 
 /**
- * Fetches the raw data, maps it into a more idiomatic shape, then returns it
- * as a map from `string` ISO language codes to `Language` objects.
- *
  * Docs: https://developers.themoviedb.org/3/configuration/get-languages
  */
 export async function getLanguages(apiKey: string): Promise<LanguageMap> {
