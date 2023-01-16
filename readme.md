@@ -11,6 +11,27 @@ JavaScript/TypeScript.
 - Properties which would sometimes have empty string values (`""`) now use
   optional values instead
 
+## Error Handling
+
+The API returns 200, 401, and 404 responses. The SDK throws an
+[`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error)
+when a 401 or 404 response is received. The full
+[`Response`](https://developer.mozilla.org/en-US/docs/Web/API/Response) will be
+assigned to
+[`Error.cause`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error/cause),
+and
+[`Error.message`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error/message)
+will be either a specific status message returned by the API if present, or the
+value of
+[`Response.statusText`](https://developer.mozilla.org/en-US/docs/Web/API/Response/statusText)
+otherwise.
+
+Additionally the standard
+[`fetch`](https://developer.mozilla.org/en-US/docs/Web/API/fetch) function used
+internally throws a
+[`TypeError`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError)
+when a network issue is encountered.
+
 ## API v3
 
 https://developers.themoviedb.org/3/getting-started/introduction

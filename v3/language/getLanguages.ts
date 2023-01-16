@@ -12,9 +12,6 @@ type RawLanguage = {
  * as a map from `string` ISO language codes to `Language` objects.
  *
  * Docs: https://developers.themoviedb.org/3/configuration/get-languages
- *
- * @throws {TypeError} when fetch encounters a network error
- * @throws {Error} when fetch succeeded but a non-200 status code was received. The `Response` will be assigned to `Error.cause`, and the `Error`'s message will be either a specific status message returned by the API if present, or the `Response.statusText` otherwise.
  */
 export async function getLanguages(apiKey: string): Promise<LanguageMap> {
   const data: RawLanguage[] = await fetchJSONv3(
