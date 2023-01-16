@@ -78,6 +78,23 @@ import type {
 } from "path/to/v3/languages/mod.ts";
 ```
 
+### Movies
+
+#### Search
+
+Source:
+
+- https://developers.themoviedb.org/3/search/search-movies
+
+```ts
+import { searchMovies } from "path/to/v3/movies/mod.ts";
+import type {
+  MovieSearchResult,
+  SearchMoviesOptions,
+  SearchResultsPage,
+} from "path/to/v3/languages/mod.ts";
+```
+
 ## Roadmap
 
 - Current Version: 0.1.0
