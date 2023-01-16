@@ -55,7 +55,7 @@ import type {
 ## Roadmap
 
 - Current Version: 0.1.0
-- Completed: 1
+- Completed: 4
 - Slated: 145
 
 |    | SDK  | Category        | Function                        |
@@ -95,7 +95,7 @@ import type {
 |    | v0.0 | Companies       | `getCompanyImages()`            |
 |    | -    | Configuration   | -                               |
 |    | v0.0 | Configuration   | `getConfiguration()`            |
-|    | v0.0 | Configuration   | `getCountries()`                |
+| ✅  | v0.1 | Configuration   | `getCountries()`                |
 |    | v0.0 | Configuration   | `getJobs()`                     |
 | ✅  | v0.1 | Configuration   | `getLanguages()`                |
 |    | v0.0 | Configuration   | `getPrimaryTranslations()`      |
@@ -108,7 +108,7 @@ import type {
 |    | -    | Find            | -                               |
 |    | v0.0 | Find            | `find()`                        |
 |    | -    | Genres          | -                               |
-|    | v0.0 | Genres          | `getMovieGenres()`              |
+| ✅  | v0.1 | Genres          | `getMovieGenres()`              |
 |    | v0.0 | Genres          | `getTVGenres()`                 |
 |    | -    | GuestSessions   | -                               |
 |    | v0.0 | GuestSessions   | `getRatedMovies()`              |
@@ -173,7 +173,7 @@ import type {
 |    | v0.0 | Search          | `searchCompanies()`             |
 |    | v0.0 | Search          | `searchCollections()`           |
 |    | v0.0 | Search          | `searchKeywords()`              |
-|    | v0.0 | Search          | `searchMovies()`                |
+| ✅  | v0.1 | Search          | `searchMovies()`                |
 |    | v0.0 | Search          | `search()`                      |
 |    | v0.0 | Search          | `searchPeople()`                |
 |    | v0.0 | Search          | `searchTVShows()`               |
