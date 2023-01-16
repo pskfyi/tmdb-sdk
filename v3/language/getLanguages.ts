@@ -1,4 +1,4 @@
-import { fetchJSONv3 } from "../../utils/fetchJSONv3.ts";
+import { fetchJSON } from "../utils.ts";
 import { Language, LanguageMap } from "./types.ts";
 
 type RawLanguage = {
@@ -11,7 +11,7 @@ type RawLanguage = {
  * Docs: https://developers.themoviedb.org/3/configuration/get-languages
  */
 export async function getLanguages(apiKey: string): Promise<LanguageMap> {
-  const data: RawLanguage[] = await fetchJSONv3(
+  const data: RawLanguage[] = await fetchJSON(
     "/configuration/languages",
     apiKey,
   );

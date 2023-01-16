@@ -1,6 +1,5 @@
-import { fetchJSONv3 } from "../../utils/fetchJSONv3.ts";
 import { LanguageOptions } from "../types.ts";
-import { languageOptionsToISO6391String } from "../utils.ts";
+import { fetchJSON, languageOptionsToISO6391String } from "../utils.ts";
 import { GenreMap } from "./types.ts";
 
 type RawGenre = { id: number; name: string };
@@ -10,7 +9,7 @@ export async function getMovieGenres(
   apiKey: string,
   options: LanguageOptions = {},
 ): Promise<GenreMap> {
-  const data: { genres: RawGenre[] } = await fetchJSONv3(
+  const data: { genres: RawGenre[] } = await fetchJSON(
     "/genre/movie/list",
     apiKey,
     { language: languageOptionsToISO6391String(options) },
