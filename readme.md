@@ -8,8 +8,19 @@ JavaScript/TypeScript.
 
 - Replaces `snake_case` properties with `camelCase`
 - Renames properties where appropriate
-- Properties which would sometimes have empty string values (`""`) now use
-  optional values instead
+- Properties which would sometimes have `null` or empty string values (`""`) now
+  use optional values instead
+
+<h2>Table of Contents</h2>
+
+- [Error Handling](#error-handling)
+- [API v3](#api-v3)
+  - [Countries](#countries)
+  - [Genres](#genres)
+  - [Languages](#languages)
+  - [Movies](#movies)
+    - [Search](#search)
+- [Roadmap](#roadmap)
 
 ## Error Handling
 

@@ -1,6 +1,7 @@
 {
   "recommendations": [
     "streetsidesoftware.code-spell-checker",
-    "denoland.vscode-deno"
+    "denoland.vscode-deno",
+    "yzhang.markdown-all-in-one"
   ]
 }
