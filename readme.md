@@ -51,6 +51,17 @@ import type {
 } from "path/to/v3/countries/mod.ts";
 ```
 
+### Genres
+
+Source:
+
+- https://developers.themoviedb.org/3/genres/get-movie-list
+
+```ts
+import { getMovieGenres, MOVIE_GENRES } from "path/to/v3/genres/mod.ts";
+import type { GenreMap, MovieGenre } from "path/to/v3/genres/mod.ts";
+```
+
 ### Language
 
 Source:
