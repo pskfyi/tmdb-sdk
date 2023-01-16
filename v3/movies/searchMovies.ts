@@ -1,6 +1,6 @@
 import { CountryCode } from "../countries/countries.ts";
 import { MOVIE_GENRES, MovieGenre } from "../genre/genres.ts";
-import { LanguageCode } from "../language/languages.ts";
+import { LanguageCode } from "../languages/languages.ts";
 import { LanguageOptions } from "../types.ts";
 import { fetchJSON, languageOptionsToISO6391String } from "../utils.ts";
 

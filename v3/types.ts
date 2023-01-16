@@ -1,5 +1,5 @@
 import { CountryCode } from "./countries/countries.ts";
-import { LanguageCode } from "./language/languages.ts";
+import { LanguageCode } from "./languages/languages.ts";
 
 type Language = {
   /**

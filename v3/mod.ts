@@ -1,3 +1,3 @@
 export * from "./constants.ts";
 
-export * from "./language/mod.ts";
+export * from "./languages/mod.ts";

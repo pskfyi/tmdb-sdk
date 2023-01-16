@@ -62,7 +62,7 @@ import { getMovieGenres, MOVIE_GENRES } from "path/to/v3/genres/mod.ts";
 import type { GenreMap, MovieGenre } from "path/to/v3/genres/mod.ts";
 ```
 
-### Language
+### Languages
 
 Source:
 
@@ -70,12 +70,12 @@ Source:
 - https://developers.themoviedb.org/3/configuration/get-languages
 
 ```ts
-import { getLanguages, LANGUAGES } from "path/to/v3/language/mod.ts";
+import { getLanguages, LANGUAGES } from "path/to/v3/languages/mod.ts";
 import type {
   Language,
   LanguageCode,
   LanguageMap,
-} from "path/to/v3/language/mod.ts";
+} from "path/to/v3/languages/mod.ts";
 ```
 
 ## Roadmap
